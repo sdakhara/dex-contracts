@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Web3 Example</title>
+		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+		<style>
+			.dataContainer {
+				display: flex;
+				align-items: center;
+				gap: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>DEX</h1>
+		<button id="connectButton">Connect Metamask</button>
+		<p id="accountAddress"></p>
+
+		<p>Enter Tokens You Want to Trade</p>
+		<input placeholder="Base Token" id="baseTokenInput" type="text" />
+		<input placeholder="Quote Token" id="quoteTokenInput" type="text" />
+		<button id="tokenDetailsButton">Get Token</button>
+
+		<div>
+			<h2>Base Token Details</h2>
+			<div class="dataContainer">
+				<h4>Name</h4>
+				<p id="baseTokenName"></p>
+			</div>
+			<div class="dataContainer">
+				<h4>Symbol</h4>
+				<p id="baseTokenSymbol"></p>
+			</div>
+			<div class="dataContainer">
+				<h4>Wallet Balance</h4>
+				<p id="baseTokenBalance"></p>
+			</div>
+		</div>
+		<div>
+			<h2>Quote Token Details</h2>
+			<div class="dataContainer">
+				<h4>Name</h4>
+				<p id="quoteTokenName"></p>
+			</div>
+			<div class="dataContainer">
+				<h4>Symbol</h4>
+				<p id="quoteTokenSymbol"></p>
+			</div>
+			<div class="dataContainer">
+				<h4>Wallet Balance</h4>
+				<p id="quoteTokenBalance"></p>
+			</div>
+		</div>
+		<input id="amountInput" placeholder="Enter Amount" type="number" />
+		<select id="depositTokenSelect">
+			<option value="base">Base Token</option>
+			<option value="quote">Quote Token</option>
+		</select>
+		<button id="depositButton">Deposit</button>
+		<button id="withdrawButton">Withdraw</button>
+
+		<h2>Dex Balance</h2>
+		<div class="dataContainer">
+			<p>Base Token:</p>
+			<p id="baseTokenDexBalance"></p>
+		</div>
+		<div class="dataContainer">
+			<p>Dex Token:</p>
+			<p id="quoteTokenDexBalance"></p>
+		</div>
+		<h2>Order Creation</h2>
+		<input placeholder="Amount" type="number" id="orderAmountInput" />
+		<input placeholder="Price" type="number" id="orderPriceInput" />
+		<button id="createOrderButton">Create Order</button>
+
+		<script src="metadata.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
